@@ -49,7 +49,7 @@ $ anvil
 ### Deploy
 
 ```shell
-forge script script/DeployElection.s.sol:DeployElection --fork-url sepolia --broadcast --verify -vvvvvv
+forge script script/DeployElectionSystem.s.sol:DeployElectionSystem --fork-url sepolia --broadcast --verify -vvvvvv
 ```
 
 ### Cast
