@@ -17,7 +17,7 @@ contract VoterRegistration {
     }
 
     function registerVoter(address _voter) external onlyElectoralBoard {
-        require(!registeredVoters[_voter], "Voter already registered");
+        require(!registeredVoters[_voter], "Voter already Registered");
         registeredVoters[_voter] = true;
         emit VoterRegistered(_voter);
     }
