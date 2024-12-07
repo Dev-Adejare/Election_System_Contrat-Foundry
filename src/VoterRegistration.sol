@@ -8,7 +8,7 @@ contract VoterRegistration {
     event VoterRegistered(address indexed voter);
 
     modifier onlyElectoralBoard() {
-        require(msg.sender == electoralBoard, "Only electoral board can perform this action");
+        require(msg.sender == electoralBoard, "Only Electoral board can perform this action");
         _;
     }
 
