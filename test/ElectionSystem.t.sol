@@ -28,7 +28,7 @@ contract ElectionSystemTest is Test {
         vm.stopPrank();
     }
 
-    function testElectionLifecycle() public {
+      function testElectionLifecycle() public {
         // Register voters
         vm.startPrank(electoralBoard);
         voterRegistration.registerVoter(voter1);
@@ -41,7 +41,7 @@ contract ElectionSystemTest is Test {
         electionFactory.deployElection("Lagos");
 
         // Get Lagos election address
-        (string memory stateName, address electionAddress) = electionFactory.deployedElections(0);
+        (, address electionAddress) = electionFactory.deployedElections(0);
         lagosElection = Election(electionAddress);
 
         // Add candidates
@@ -62,7 +62,7 @@ contract ElectionSystemTest is Test {
         lagosElection.vote(1); // Vote for Candidate B
 
         // End election
-        vm.prank(electoralBoard);
+        vm.prank(address(electionFactory));
         lagosElection.endElection();
 
         // Get winner
